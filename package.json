@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/HarinderG/CS-290-Final-Project/issues"
   },
-  "homepage": "https://github.com/HarinderG/CS-290-Final-Project#readme"
+  "homepage": "https://github.com/HarinderG/CS-290-Final-Project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
 }

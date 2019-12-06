@@ -1,0 +1,19 @@
+{
+  "name": "cs-290-final-project",
+  "version": "1.0.0",
+  "description": "Movie and TV searching website.",
+  "main": "/public/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarinderG/CS-290-Final-Project.git"
+  },
+  "author": "David S, Harinder G, Lake P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HarinderG/CS-290-Final-Project/issues"
+  },
+  "homepage": "https://github.com/HarinderG/CS-290-Final-Project#readme"
+}

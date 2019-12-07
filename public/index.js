@@ -3,11 +3,6 @@ var qButton = document.getElementById("card-poster");
 var filterCity = document.getElementById('filter-city');
 console.log(qButton);
 
-var API_KEY = e583146d;
-
-
-
-
 qButton.addEventListener("click", search);
 
 

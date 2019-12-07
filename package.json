@@ -2,9 +2,12 @@
   "name": "cs-290-final-project",
   "version": "1.0.0",
   "description": "Movie and TV searching website.",
-  "main": "/public/index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars ./views/partials/movieCard.handlebars -f public/movieCard.js",
+    "dev": "nodemon server.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",

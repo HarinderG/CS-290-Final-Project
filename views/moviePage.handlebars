@@ -8,7 +8,7 @@
 
   </section>
 
-  <!-- <aside class="filter-container">
+<!--  <aside class="filter-container">
 
     <h2>Filters</h2>
 
@@ -87,39 +87,59 @@
 
     <div class="modal-body">
 
-      <div class="movie-input-element">
-        <label for="movie-title-input">Movie Title</label>
-        <input type="text" id="movie-title-input"></input>
+      <div class="filter-input-container">
+        <label for="filter-movie-title " class="filter-input-label">Movie Title</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-movie-title" id="filter-movie-title" class="filter-input">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-genre-input">Movie Genre</label>
-        <input type="text" id="movie-genre-input">
+      <div class="filter-input-container">
+        <label for="filter-movie-genre " class="filter-input-label">Movie Genre</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-movie-genre" id="filter-movie-genre" class="filter-input">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-year-input">Movie Year</label>
-        <input type="text" id="movie-year-input">
+      <div class="filter-input-container">
+        <label for="filter-movie-year " class="filter-input-label">Movie Year</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-movie-year" id="filter-movie-year" class="filter-input">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-rated-input">Movie Rated</label>
-        <input type="text" id="movie-rated-input">
+      <div class="filter-input-container">
+        <label for="filter-movie-rated " class="filter-input-label">Movie Rated</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-movie-rated" id="filter-movie-rated" class="filter-input">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-actor-input">Movie Actor</label>
-        <input type="text" id="movie-actor-input">
+      <div class="filter-input-container">
+        <label for="filter-movie-actor " class="filter-input-label">Movie Actor</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-movie-actor" id="filter-movie-actor" class="filter-input">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-metascore-input">Movie Metascore</label>
-        <input type="text" id="movie-metascore-input">
+      <div class="filter-input-container">
+        <label for="filter-min-metascore" class="filter-input-label">Movie Metascore</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-min-metascore" id="filter-min-metascore" class="filter-input" placeholder="ex: 1">
+        </div>
+        <div class="filter-input-element">
+          <input type="text" name="filter-max-metascore" id="filter-max-metascore" class="filter-input" placeholder="ex: 100">
+        </div>
       </div>
 
-      <div class="movie-input-element">
-        <label for="movie-imdbrating-input">Movie IMDB Rating</label>
-        <input type="text" id="movie-imdbrating-input">
+      <div class="filter-input-container">
+        <label for="filter-min-imdbrating" class="filter-input-label">Movie IMDB Rating</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-min-imdbrating" id="filter-min-imdbrating" class="filter-input" placeholder="ex: 1">
+        </div>
+        <div class="filter-input-element">
+          <input type="text" name="filter-max-imdbrating" id="filter-max-imdbrating" class="filter-input" placeholder="ex: 10">
+        </div>
       </div>
 
     </div>

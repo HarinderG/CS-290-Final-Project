@@ -3,6 +3,11 @@ var qButton = document.getElementById("card-poster");
 var filterCity = document.getElementById('filter-city');
 console.log(qButton);
 
+var API_KEY = e583146d;
+
+
+
+
 qButton.addEventListener("click", search);
 
 
@@ -23,3 +28,29 @@ function search() {
 		})
 }
  search();
+
+
+ function search(movieTitle) {
+	console.log(qSearch);
+	fetch('http://www.omdbapi.com/?s=' + movieTitle +'&apikey=' + API_KEY)
+		.then(response => {
+			// Get JSON
+			return response.json()
+		})
+		.then(data => {
+			// Work with JSON data here
+			var img = document.getElementById(/*"unknownYet"*/);
+			img.src = data['Poster'];
+		})
+		.catch(err => {
+			// Do something for an error here
+			//display 404 error page 
+			//res.status(404).render('404');  ?
+		})
+}
+search(title);
+
+
+
+
+

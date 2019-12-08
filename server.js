@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get("*", async function (req, res) {
-	await fetch('http://www.omdbapi.com/?s=' + "cars" + "&page=2" +'&apikey=e583146d')
+	await fetch('http://www.omdbapi.com/?s=' + "cars" +'&apikey=e583146d')
 		.then(response => {
 			// Get JSON
 			return response.json()

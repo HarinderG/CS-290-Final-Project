@@ -3,11 +3,12 @@
   float: left;
   display: inline-block;
   vertical-align: top;
-  height: 198px;
-  width: 132px;
-  margin: 20px;
-  border: 1px solid white;
-  border-radius: 5px;
+  height: 215px;
+  width: 160px;
+  margin-top: 1%;
+  margin-bottom: 6%;
+  margin-left: 2%;
+  margin-right: 1%;
 }
 
 .card-contents
@@ -21,8 +22,8 @@
 
 .card-image-container img
 {
-  max-height: 215px;
-  max-width: 166px;
+  height: 215px;
+  width: 160px;
 }
 
 .card-info-container

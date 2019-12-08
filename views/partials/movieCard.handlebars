@@ -1,7 +1,11 @@
 <div class="card">
-  <img class="card-img-top" src="{{photoURL}}" alt="{{movieTitle}}">
-  <div class="card-body">
-    <span class="card-title">{{movieTitle}}</span>
-    <span class="card-genre">{{genre}}</span>
+  <div class="card-contents">
+    <div class="card-image-container">
+      <img src="{{moviePosterURL}}" alt="{{title}}">
+    </div>
+    <div class="card-info-container">
+      <span class="card-title">{{title}}</span>
+      <span class="card-genre">({{genre}})</span>
+    </div>
   </div>
 </div>

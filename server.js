@@ -7,13 +7,27 @@ var port = process.env.PORT || 3000;
 /*var postData = require("./postData.json");
 var test;*/
 
+var fetch = require("node-fetch");
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-app.get("*", function (req, res) {
-  res.status(200).render('moviePage');
+app.get("*", async function (req, res) {
+	await fetch('http://www.omdbapi.com/?s=' + "cars" + "&page=2" +'&apikey=e583146d')
+		.then(response => {
+			// Get JSON
+			return response.json()
+		})
+		.then(data => {
+			// Work with JSON data here
+			res.status(200).render('moviePage', {data});
+		})
+		.catch(err => {
+			// Do something for an error here
+			console.log("------------------ URL DOES NOT EXIST");
+		})
 });
 
 app.listen(port, function () {

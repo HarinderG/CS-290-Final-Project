@@ -1,0 +1,52 @@
+.card
+{
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+  height: 300px;
+  width: 135px;
+  margin: 50px;
+  padding: 10px solid;
+  border: 10px solid #ffffff;
+  border-radius: 20px;
+}
+
+.card-contents
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card-image-container img
+{
+  max-height: 600px;
+  max-width: 900px;
+}
+
+.card-info-container
+{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.card-title
+{
+  display: inline-block;
+  font-size: 100%;
+  color: #ffffff;
+}
+
+.card-genre
+{
+  display: inline-block;
+  font-size: 100%;
+  color: #ffffff;
+}
+
+.hidden
+{
+  display: none;
+}

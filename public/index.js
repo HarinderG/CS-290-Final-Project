@@ -65,6 +65,7 @@ var modalCancelButton = document.getElementById('modal-cancel');
 		modalCancelButton.addEventListener('click', hideAdvancedSearchModal);
 	}
 
+//make modal pop up
 function showAdvancedSearchModal(){
 
 	var showAdvancedSearchModal = document.getElementById('Advanced-Search-Modal');
@@ -74,6 +75,7 @@ function showAdvancedSearchModal(){
 	modalBackDrop.ClassList.remove('hidden');
 }
 
+//hide modal from sight
 function hideAdvancedSearchModal(){
 	var showAdvancedSearchModal = document.getElementById('Advanced-Search-Modal');
 	var modalBackDrop = document.getElementById('modal-backdrop');
@@ -83,13 +85,45 @@ function hideAdvancedSearchModal(){
 
 }
 
+//update based on filter specifications
 function HandleAdvancedSearchAcceptClick(){
 
 	doFilterUpdate();
 
 	hideAdvancedSearchModal();
+}
+
+
+//check if the filter conditions are acceptable
+function postPassesFilters(post, filters) {
+
+  if (filters.text) {
+    var postDescription = post.description.toLowerCase();
+    var movieTitle = filters.text.toLowerCase();
+    if (postDescription.indexOf(filterText) === -1) {
+      return false;
+    }
+  }
+
+  if (filters.minScore) {
+    var filterMinPrice = Number(filters.minScore);
+    if (Number(post.Score) < filterMinScore) {
+      return false;
+    }
+  }
+
+  if (filters.maxScore) {
+    var filterMaxPrice = Number(filters.maxScore);
+    if (Number(post.Score) > filterMaxScore) {
+      return false;
+    }
+  }
+
+
+  return true;
 
 }
+
 
 
 function doFilterUpdate() {
@@ -99,14 +133,11 @@ function doFilterUpdate() {
    */
   var filters = {
     movieTitle: document.getElementById('filter-text').value.trim(),
-    minScore: document.getElementById('filter-min-price').value,
-    maxScore: document.getElementById('filter-max-price').value,
+    minScore: document.getElementById('filter-min-score').value,
+    maxScore: document.getElementById('filter-max-score').value,
     year: document.getElementById('filter-year').value,
     Actor: document.getElementById('filter-actor').value
-
   }
-
-
 
   /*
    * Remove all "post" elements from the DOM.
@@ -122,7 +153,7 @@ function doFilterUpdate() {
    */
   allPosts.forEach(function (post) {
     if (postPassesFilters(post, filters)) {
-      insertNewPost(post.description, post.photoURL, post.price, post.city, post.condition);
+      insertNewPost(post.description, post.Poster, post.Actor, post.Year, post.movieTitle);
     }
   });
 

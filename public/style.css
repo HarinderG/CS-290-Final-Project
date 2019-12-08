@@ -3,12 +3,11 @@
   float: left;
   display: inline-block;
   vertical-align: top;
-  height: 300px;
-  width: 135px;
-  margin: 50px;
-  padding: 10px solid;
-  border: 10px solid #ffffff;
-  border-radius: 20px;
+  height: 198px;
+  width: 132px;
+  margin: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .card-contents
@@ -22,8 +21,8 @@
 
 .card-image-container img
 {
-  max-height: 600px;
-  max-width: 900px;
+  max-height: 215px;
+  max-width: 166px;
 }
 
 .card-info-container
@@ -34,16 +33,32 @@
 
 .card-title
 {
-  display: inline-block;
+  display: block;
   font-size: 100%;
   color: #ffffff;
 }
 
 .card-genre
 {
-  display: inline-block;
+  display: block;
   font-size: 100%;
   color: #ffffff;
+}
+
+#advanced-search-button
+{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+  font-size: 36px;
+  background-color: #f67811;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .hidden

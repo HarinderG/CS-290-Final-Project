@@ -1,27 +1,35 @@
 var qSearch = document.getElementById("quick-search-box");
 var qButton = document.getElementById("card-poster");
 var filterCity = document.getElementById('filter-city');
-console.log(qButton);
 
-qButton.addEventListener("click", search);
+/*qButton.addEventListener("click", search);
+*/
 
-
-function search() {
-	console.log(qSearch);
-	fetch('http://www.omdbapi.com/?t=Avengers&apikey=' + API_KEY)
+async function search(movieTitle) {
+	await fetch('http://www.omdbapi.com/?s=' + movieTitle + "&page=2" +'&apikey=e583146d')
 		.then(response => {
 			// Get JSON
 			return response.json()
 		})
 		.then(data => {
 			// Work with JSON data here
-			var img = document.getElementById("card-poster");
-			img.src = data['Poster'];
+			for (var i = data.Search.length - 1; i >= 0; i--) {
+				var newPost = Handlebars.templates.movieCard({
+					Title: data.Search[i].Title,
+					Poster: data.Search[i].Poster,
+				});
+				console.log(data.Search[i]);
+				var postsSection = document.getElementById('posts');
+				postsSection.insertAdjacentHTML('beforeend', newPost);
+
+			}
 		})
 		.catch(err => {
 			// Do something for an error here
+			console.log("------------------ URL DOES NOT EXIST");
 		})
 }
+<<<<<<< HEAD
  search();
 
 
@@ -166,3 +174,6 @@ function doFilterUpdate() {
 
 
 
+=======
+search("Cars");
+>>>>>>> 82bb8f9a2ff5e7deb918710b68b89b23766dfe22

@@ -34,6 +34,7 @@ search("cars");
 
 var advancedSearchButton = document.getElementById('advanced-search-button');
 if(advancedSearchButton){
+	console.log("hit advanced search button");
 	advancedSearchButton.addEventListener('click', showAdvancedSearchModal);
 }
 
@@ -44,27 +45,35 @@ var modalAcceptButton = document.getElementById('modal-accept');
   }
   
 var modalCancelButton = document.getElementById('modal-cancel');
-	if('modal-cancel'){
+	if(modalCancelButton){
+		console.log("close button");
 		modalCancelButton.addEventListener('click', hideAdvancedSearchModal);
 	}
 
 //make modal pop up
 function showAdvancedSearchModal(){
 
-	var showAdvancedSearchModal = document.getElementById('Advanced-Search-Modal');
+	var showAdvancedSearchModal = document.getElementById('advanced-search-modal');
 	var modalBackDrop = document.getElementById('modal-backdrop');
 
-	showAdvancedSearchModal.ClassList.remove('hidden');
-	modalBackDrop.ClassList.remove('hidden');
+	console.log("show button");
+	showAdvancedSearchModal.style.display = "block";
+	modalBackDrop.style.display = "block";
+
+
 }
 
 //hide modal from sight
 function hideAdvancedSearchModal(){
-	var showAdvancedSearchModal = document.getElementById('Advanced-Search-Modal');
+	var showAdvancedSearchModal = document.getElementById('advanced-search-modal');
 	var modalBackDrop = document.getElementById('modal-backdrop');
 
-	showAdvancedSearchModal.ClassList.add('hidden');
-	modalBackDrop.ClassList.add('hidden');
+	console.log("hide the modal");
+	showAdvancedSearchModal.style.display = "none";
+	modalBackDrop.style.display = "none";
+
+	
+
 
 }
 
@@ -101,7 +110,6 @@ function postPassesFilters(post, filters) {
       return false;
     }
   }
-
 
   return true;
 

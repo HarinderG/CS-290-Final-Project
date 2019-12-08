@@ -1,11 +1,11 @@
-var qSearch = document.getElementById("quick-search-box");
-var qButton = document.getElementById("card-poster");
-var filterCity = document.getElementById('filter-city');
+var searchBox = document.getElementById("search-box");
+var searchButton = document.getElementById("search-button");
 
-/*qButton.addEventListener("click", search);
-*/
-async function search(movieTitle) {
-	await fetch('http://www.omdbapi.com/?s=' + movieTitle + "&page=2" +'&apikey=e583146d')
+
+searchButton.addEventListener('click', search);
+
+async function search() {
+	await fetch('http://www.omdbapi.com/?s=' + searchBox.value +'&apikey=e583146d')
 		.then(response => {
 			// Get JSON
 			return response.json()
@@ -17,18 +17,16 @@ async function search(movieTitle) {
 					Title: data.Search[i].Title,
 					Poster: data.Search[i].Poster,
 				});
-				console.log(data.Search[i]);
 				var postsSection = document.getElementById('posts');
-				console.log(postsSection);
 				postsSection.insertAdjacentHTML('beforeend', newPost);
 			}
 		})
 		.catch(err => {
 			// Do something for an error here
-			console.log("------------------ URL DOES NOT EXIST");
+			console.log("------------------ URL DNE");
 		})
-}
-search("cars");
+};
+
 //----------------------------------------------------------------------------------
 
 

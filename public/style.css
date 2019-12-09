@@ -1,7 +1,16 @@
-.site-title
+header
 {
-  font-size: 100px;
-  padding: 5px;
+  background-color: #000;
+}
+
+.header-image-container img
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  width: 485px;
+  height: 160px;
 }
 
 #posts

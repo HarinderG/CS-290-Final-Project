@@ -10,7 +10,14 @@ header
   margin-right: auto;
   padding: 15px;
   width: 485px;
-  height: 160px;
+  height: 140px;
+}
+
+.logo-image-container img
+{
+  display: block;
+  width: 60px;
+  height: 40px;
 }
 
 #posts
@@ -64,7 +71,9 @@ header
   font-size: 100%;
   color: #ffffff;
 }
-#modal-backdrop {
+
+#modal-backdrop
+{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -80,28 +89,34 @@ header
   cursor: pointer;
   /*z-index: 1060;*/
 }
+
 #advanced-search-button
 {
   position: fixed;
   right: 30px;
   bottom: 30px;
-  height: 60px;
-  width: 60px;
+  height: 45px;
+  width: 75px;
   border: none;
-  border-radius: 30px;
-  font-size: 36px;
+  border-radius: 4px;
+  font-size: 20px;
   background-color: #299FD6;
   color: #fff;
   cursor: pointer;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   /*z-index: 1060;*/
+}
+
+#advanced-search-button:hover {
+  background-color: #227FAC;
+  color: white;
 }
 
 .hidden
 {
   z-index: 1000;
   display: none;
-
 }
 
 
@@ -111,10 +126,10 @@ header
   cursor: pointer;
   display: block;
   /*z-index: 1060;*/
-
 }
 
-#advanced-search-modal {
+#advanced-search-modal
+{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -124,14 +139,15 @@ header
   overflow: scroll;
 }
 
-
-.modal-header {
+.modal-header
+{
   position: relative;
   padding: 10px 20px;
   display: none;
 }
 
-.modal-header h3 {
+.modal-header h3
+{
   margin: 0;
   font-size: 28px;
 }

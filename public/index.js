@@ -87,7 +87,7 @@ function cleanMyText(textString){
 
 
 function AcceptClick(){
-	var movieTitleSearchText = document.getElementById('filter-movie-title').value;
+	var movieTitleSearchText = document.getElementById('post-text-input').value;
 
 	var cleanMovieTitle = cleanMyText(movieTitleSearchText);
 
@@ -109,8 +109,6 @@ function HandleAdvancedSearchAcceptClick(){
 	hideAdvancedSearchModal();
 
 	AcceptClick();
-
-	
 }
 
 

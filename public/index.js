@@ -30,6 +30,7 @@ async function search() {
 //----------------------------------------------------------------------------------
 
 
+
 var advancedSearchButton = document.getElementById('advanced-search-button');
 if(advancedSearchButton){
 	console.log("hit advanced search button");
@@ -44,7 +45,7 @@ var modalAcceptButton = document.getElementById('modal-accept');
   
 var modalCancelButton = document.getElementById('modal-cancel');
 	if(modalCancelButton){
-		console.log("close button");
+		console.log("cancel button");
 		modalCancelButton.addEventListener('click', hideAdvancedSearchModal);
 	}
 
@@ -76,74 +77,41 @@ function hideAdvancedSearchModal(){
 }
 
 //update based on filter specifications
+
+
+
+function cleanMyText(textString){
+	var cleanText = textString.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
+	return cleanText;
+}
+
+
+function AcceptClick(){
+	var movieTitleSearchText = document.getElementById('filter-movie-title').value;
+
+	var cleanMovieTitle = cleanMyText(movieTitleSearchText);
+
+	var allCards = document.querySelectorAll(".card")
+
+	//search through card titles and remove ones that don't match
+	for (i = 0; i < allCards.length; i++){
+		console.log(allCards[i]);
+		var textContentOfAllPostsArray = allCards[i].querySelector(".card-title").textContent.toLowerCase();
+		if(textContentOfAllPostsArray.indexOf(cleanMovieTitle) == -1){ //if the post[i] doesnt contain search term, delete it
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
 function HandleAdvancedSearchAcceptClick(){
 
-	doFilterUpdate();
-
 	hideAdvancedSearchModal();
-}
 
+	AcceptClick();
 
-//check if the filter conditions are acceptable
-function postPassesFilters(post, filters) {
-
-  if (filters.text) {
-    var postDescription = post.description.toLowerCase();
-    var movieTitle = filters.text.toLowerCase();
-    if (postDescription.indexOf(filterText) === -1) {
-      return false;
-    }
-  }
-
-  if (filters.minScore) {
-    var filterMinPrice = Number(filters.minScore);
-    if (Number(post.Score) < filterMinScore) {
-      return false;
-    }
-  }
-
-  if (filters.maxScore) {
-    var filterMaxPrice = Number(filters.maxScore);
-    if (Number(post.Score) > filterMaxScore) {
-      return false;
-    }
-  }
-
-  return true;
-
+	
 }
 
 
 
-function doFilterUpdate() {
-
-  /*
-   * Grab values of filters from user inputs.
-   */
-  var filters = {
-    movieTitle: document.getElementById('filter-text').value.trim(),
-    minScore: document.getElementById('filter-min-score').value,
-    maxScore: document.getElementById('filter-max-score').value,
-    year: document.getElementById('filter-year').value,
-    Actor: document.getElementById('filter-actor').value
-  }
-
-  /*
-   * Remove all "post" elements from the DOM.
-   */
-  var postContainer = document.getElementById('posts');
-  while(postContainer.lastChild) {
-    postContainer.removeChild(postContainer.lastChild);
-  }
-
-  /*
-   * Loop through the collection of all "post" elements and re-insert ones
-   * that meet the current filtering criteria.
-   */
-  allPosts.forEach(function (post) {
-    if (postPassesFilters(post, filters)) {
-      insertNewPost(post.description, post.Poster, post.Actor, post.Year, post.movieTitle);
-    }
-  });
-
-}

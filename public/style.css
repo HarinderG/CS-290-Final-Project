@@ -71,6 +71,20 @@ header
   font-size: 100%;
   color: #ffffff;
 }
+<<<<<<< Updated upstream
+=======
+
+#modal-backdrop {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+>>>>>>> Stashed changes
 
 #advanced-search-button
 {
@@ -97,6 +111,7 @@ header
 
 #modal-backdrop
 {
+<<<<<<< Updated upstream
   position: fixed;
   top: 0;
   bottom: 0;
@@ -104,11 +119,20 @@ header
   right: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.85);
+=======
+
+  position: sticky;
+  cursor: pointer;
+  display: block;
+  /*z-index: 1060;*/
+
+>>>>>>> Stashed changes
 }
 
 #advanced-search-modal
 {
   position: fixed;
+  pointer-events: none;
   top: 0;
   bottom: 0;
   left: 0;

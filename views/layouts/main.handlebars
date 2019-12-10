@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/Cyborg.bootstrap.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.runtime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <script src='/movieCard.js'></script>
   	<script type='text/javascript' src='/config.js'></script>
   	<script type='text/javascript' src='/index.js' defer></script>
@@ -15,7 +19,7 @@
 
   <header>
     <div class="header-image-container">
-      <img src="/HeaderFlixLogo.png" alt="Header Cartoon Movie Camera">
+      <img src="HeaderFlixLogo.png" alt="Header Cartoon Movie Camera">
     </div>
   </header>
 
@@ -33,27 +37,58 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
+
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Popular</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Decade</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="#">1980-1989</a>
+              <a class="dropdown-item" href="#">1970 - 79</a>
+              <a class="dropdown-item" href="#">1960's</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">New</a>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genre</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="#">1961</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Year</a>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rated</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="#">1961</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Genre</a>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Metascore</a>
+            <div class="dropdown-menu" style="">
+              <a class="dropdown-item" href="#">1961</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Rated</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Metascore</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">IMDB Rating</a>
-          </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">IMDB Rating</a>
+              <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="#">1961</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+
         </ul>
         <div class="form-inline my-2 my-lg-0">
           <input id="search-box"class="form-control mr-sm-2" type="text" placeholder="Search">

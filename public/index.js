@@ -1,11 +1,10 @@
 var searchBox = document.getElementById("search-box");
 var searchButton = document.getElementById("search-button");
 
-
 searchButton.addEventListener('click', search);
 
 async function search() {
-	await fetch('http://www.omdbapi.com/?s=' + searchBox.value +'&apikey=e583146d')
+	await fetch('http://www.omdbapi.com/?s=' + searchBox.value +'&apikey=' + API_KEY)
 		.then(response => {
 			// Get JSON
 			return response.json()

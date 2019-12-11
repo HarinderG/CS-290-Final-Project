@@ -29,6 +29,92 @@ async function search() {
 //----------------------------------------------------------------------------------
 
 
+var wantedDecade60to69 = document.getElementById('dropdown-decade-1960');
+wantedDecade60to69.addEventListener('click', delDecade60to69);
+var wantedDecade70to79 = document.getElementById('dropdown-decade-1970');
+wantedDecade70to79.addEventListener('click', delDecade70to79);
+var wantedDecade80to89 = document.getElementById('dropdown-decade-1980');
+wantedDecade80to89.addEventListener('click', delDecade80to89);
+var wantedDecade90to99 = document.getElementById('dropdown-decade-1990');
+wantedDecade90to99.addEventListener('click', delDecade90to99);
+var wantedDecade2000to2009 = document.getElementById('dropdown-decade-2000');
+wantedDecade2000to2009.addEventListener('click', delDecade2000to2009);
+var wantedDecade2010to2019 = document.getElementById('dropdown-decade-2010');
+wantedDecade2010to2019.addEventListener('click', delDecade2010to2019);
+
+
+function delDecade60to69(){
+	var specifiedYear = '196';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function delDecade70to79(){
+	var specifiedYear = '197';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function delDecade80to89(){
+	var specifiedYear = '198';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function delDecade90to99(){
+	var specifiedYear = '199';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function delDecade2000to2009(){
+	var specifiedYear = '200';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function delDecade2010to2019(){
+	var specifiedYear = '201';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+	 	if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
 
 var advancedSearchButton = document.getElementById('advanced-search-button');
 if(advancedSearchButton){
@@ -70,9 +156,6 @@ function hideAdvancedSearchModal(){
 	showAdvancedSearchModal.style.display = "none";
 	modalBackDrop.style.display = "none";
 
-	
-
-
 }
 
 //update based on filter specifications
@@ -101,7 +184,19 @@ function AcceptClick(){
 		}
 	}
 
+	//search through card years and remove ones that don't match
+	var specifiedYear = document.getElementById('post-year-input').value;
+
+	for(i = 0; i < allCards.length; i++){
+		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
+		if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+
 }
+
 
 function HandleAdvancedSearchAcceptClick(){
 

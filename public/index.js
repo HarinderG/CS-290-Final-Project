@@ -13,6 +13,7 @@ searchBox.addEventListener('keypress', function search(e) {
 
 //----------------------------------------------------------------------------------
 
+//variables for event listening
 
 var wantedDecade60to69 = document.getElementById('dropdown-decade-1960');
 wantedDecade60to69.addEventListener('click', delDecade60to69);
@@ -47,11 +48,69 @@ var wantedGenreMystery = document.getElementById('dropdown-genre-mystery');
 wantedGenreMystery.addEventListener('click', getGenreMystery);
 var wantedGenreRomance = document.getElementById('dropdown-genre-romance');
 wantedGenreRomance.addEventListener('click', getGenreRomance);
-
 var wantedGenreThriller = document.getElementById('dropdown-genre-thriller');
 wantedGenreThriller.addEventListener('click', getGenreThriller);
 
+var wantedRatingG = document.getElementById("dropdown-rated-g");
+wantedRatingG.addEventListener('click', getRatingG)
+var wantedRatingPG = document.getElementById('dropdown-rated-pg')
+wantedRatingPG.addEventListener('click', getRatingPG)
+var wantedRatingPG13 = document.getElementById('dropdown-rated-pg13')
+wantedRatingPG13.addEventListener('click', getRatingPG13)
+var wantedRatingR = document.getElementById('dropdown-rated-r')
+wantedRatingR.addEventListener('click', getRatingR)
 
+
+function getRatingR(){
+	var specifiedRating = 'R';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var ratingContentOfAllCardsArray = allCards[i].getAttribute("card-rated");
+	 	if(ratingContentOfAllCardsArray != specifiedRating){
+	 		console.log('removed a rating of: ' + ratingContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function getRatingPG13(){
+	var specifiedRating = 'PG-13';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var ratingContentOfAllCardsArray = allCards[i].getAttribute("card-rated");
+	 	if(ratingContentOfAllCardsArray != specifiedRating){
+	 		console.log('removed a rating of: ' + ratingContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function getRatingPG(){
+	var specifiedRating = 'PG';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var ratingContentOfAllCardsArray = allCards[i].getAttribute("card-rated");
+	 	if(ratingContentOfAllCardsArray != specifiedRating){
+	 		console.log('removed a rating of: ' + ratingContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
+
+function getRatingG(){
+	var specifiedRating = 'G';
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var ratingContentOfAllCardsArray = allCards[i].getAttribute("card-rated");
+	 	if(ratingContentOfAllCardsArray != specifiedRating){
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+}
 
 function getGenreThriller(){
 	var specifiedGenre = 'Thriller';
@@ -65,7 +124,6 @@ function getGenreThriller(){
 		}
 	}
 }
-
 
 function getGenreRomance(){
 	var specifiedGenre = 'Romance';
@@ -273,94 +331,9 @@ function delDecade2010to2019(){
 }
 
 
-var advancedSearchButton = document.getElementById('advanced-search-button');
-if(advancedSearchButton){
-	console.log("hit advanced search button");
-	advancedSearchButton.addEventListener('click', showAdvancedSearchModal);
-}
-
-//make function
-var modalAcceptButton = document.getElementById('modal-accept');
-  if (modalAcceptButton) {
-    modalAcceptButton.addEventListener('click', HandleAdvancedSearchAcceptClick);
-  }
-  
-var modalCancelButton = document.getElementById('modal-cancel');
-	if(modalCancelButton){
-		console.log("cancel button");
-		modalCancelButton.addEventListener('click', hideAdvancedSearchModal);
-	}
-
-//make modal pop up
-function showAdvancedSearchModal(){
-
-	var showAdvancedSearchModal = document.getElementById('advanced-search-modal');
-	var modalBackDrop = document.getElementById('modal-backdrop');
-
-	console.log("show button");
-	showAdvancedSearchModal.style.display = "block";
-	modalBackDrop.style.display = "block";
-
-
-}
-
-//hide modal from sight
-function hideAdvancedSearchModal(){
-	var showAdvancedSearchModal = document.getElementById('advanced-search-modal');
-	var modalBackDrop = document.getElementById('modal-backdrop');
-
-	console.log("hide the modal");
-	showAdvancedSearchModal.style.display = "none";
-	modalBackDrop.style.display = "none";
-
-}
-
-//update based on filter specifications
 
 
 
-function cleanMyText(textString){
-	var cleanText = textString.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
-	return cleanText;
-}
-
-
-function AcceptClick(){
-	var movieTitleSearchText = document.getElementById('post-text-input').value;
-
-	var cleanMovieTitle = cleanMyText(movieTitleSearchText);
-
-	var allCards = document.querySelectorAll(".card")
-
-	//search through card titles and remove ones that don't match
-	for (i = 0; i < allCards.length; i++){
-		console.log(allCards[i]);
-		var textContentOfAllPostsArray = allCards[i].querySelector(".card-title").textContent.toLowerCase();
-		if(textContentOfAllPostsArray.indexOf(cleanMovieTitle) == -1){ //if the post[i] doesnt contain search term, delete it
-			allCards[i].parentNode.removeChild(allCards[i]);
-		}
-	}
-
-	//search through card years and remove ones that don't match
-	var specifiedYear = document.getElementById('post-year-input').value;
-
-	for(i = 0; i < allCards.length; i++){
-		var yearContentOfAllCardsArray = allCards[i].querySelector(".card-year").textContent;
-		if(yearContentOfAllCardsArray.indexOf(specifiedYear) == -1){
-			allCards[i].parentNode.removeChild(allCards[i]);
-		}
-	}
-
-
-}
-
-
-function HandleAdvancedSearchAcceptClick(){
-
-	hideAdvancedSearchModal();
-
-	AcceptClick();
-}
 
 
 

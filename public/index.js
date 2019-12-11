@@ -1,30 +1,15 @@
 var searchBox = document.getElementById("search-box");
 var searchButton = document.getElementById("search-button");
 
-searchButton.addEventListener('click', search);
+searchButton.addEventListener('click', function search() {
+	window.location.href = "http://localhost:3000/" + searchBox.value;
+});
+searchBox.addEventListener('keypress', function search(e) {
+	var key = e.which || e.keyCode;
+	if (key === 13)
+		window.location.href = "http://localhost:3000/" + searchBox.value;
+});
 
-async function search() {
-	await fetch('http://www.omdbapi.com/?s=' + searchBox.value +'&apikey=' + API_KEY)
-		.then(response => {
-			// Get JSON
-			return response.json()
-		})
-		.then(data => {
-			// Work with JSON data here
-			for (var i = data.Search.length - 1; i >= 0; i--) {
-				var newPost = Handlebars.templates.movieCard({
-					Title: data.Search[i].Title,
-					Poster: data.Search[i].Poster,
-				});
-				var postsSection = document.getElementById('posts');
-				postsSection.insertAdjacentHTML('beforeend', newPost);
-			}
-		})
-		.catch(err => {
-			// Do something for an error here
-			console.log("------------------ URL DNE");
-		})
-};
 
 //----------------------------------------------------------------------------------
 

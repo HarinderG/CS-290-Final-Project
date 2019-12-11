@@ -48,8 +48,8 @@ var wantedGenreMystery = document.getElementById('dropdown-genre-mystery');
 wantedGenreMystery.addEventListener('click', getGenreMystery);
 var wantedGenreRomance = document.getElementById('dropdown-genre-romance');
 wantedGenreRomance.addEventListener('click', getGenreRomance);
-var wantedGenreThriller = document.getElementById('dropdown-genre-thriller');
-wantedGenreThriller.addEventListener('click', getGenreThriller);
+var wantedGenreAnimation = document.getElementById('dropdown-genre-animation');
+wantedGenreAnimation.addEventListener('click', getGenreAnimation);
 
 var wantedRatingG = document.getElementById("dropdown-rated-g");
 wantedRatingG.addEventListener('click', getRatingG)
@@ -112,8 +112,8 @@ function getRatingG(){
 	}
 }
 
-function getGenreThriller(){
-	var specifiedGenre = 'Thriller';
+function getGenreAnimation(){
+	var specifiedGenre = 'Animation';
 	var allCards = document.querySelectorAll(".card");
 
 	for(i = 0; i < allCards.length; i++){

@@ -1,4 +1,4 @@
 config.js
 .DS_Store
 .Rhistory
-node_modules
+node_modules/

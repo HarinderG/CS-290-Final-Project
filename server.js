@@ -72,7 +72,7 @@ async function displayMovies (req, res) {
 				.then(data => {
 					if (data.Title.indexOf("undefined") == -1) {
 						console.log("Adding == : " + data.Title);
-						if (data.Poster.indexOf("N/A") == -1)
+						if (data.Poster.indexOf("N/A") == -1 && data.Type.indexOf("movie") != -1)
 							apiData.push(data);
 					}
 				})

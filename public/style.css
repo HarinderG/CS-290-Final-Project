@@ -61,6 +61,9 @@ header
 .card-title
 {
   display: block;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 100%;
   color: #ffffff;
 }

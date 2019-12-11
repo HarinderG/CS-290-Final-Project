@@ -77,7 +77,11 @@ header
   color: #4C4B4B;
 }
 
-.error-container {
+.error404-container {
   text-align: center;
   margin-top: 30vh;
+}
+
+.error-container {
+  text-align: center;
 }

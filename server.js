@@ -66,8 +66,10 @@ async function displayMovies (req, res) {
 					console.log("------------------ URL DOES NOT EXIST");
 				});
 		}
-		// console.log(apiData);
-		res.status(200).render('moviePage', {apiData});
+		if (apiData.length == 0)
+			res.status(200).render('badSearch');
+		else
+			res.status(200).render('moviePage', {apiData});
 }
 
 app.listen(port, function () {

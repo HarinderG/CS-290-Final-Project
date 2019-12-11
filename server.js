@@ -26,7 +26,7 @@ async function displayMovies (req, res) {
 	if (search == undefined)
 		search = "star wars";
 
-	while (apiRespone.indexOf("True") != -1) {
+	for (var pageN; pageN <= 10; pageN++) {
 		await fetch('http://www.omdbapi.com/?s=' + search + "&page=" + pageN +'&apikey=' + config.API_KEY)
 			.then(response => {
 				return response.json();
@@ -44,7 +44,6 @@ async function displayMovies (req, res) {
 			.catch(err => {
 				console.log("------------------ URL DOES NOT EXIST");
 			});
-			pageN++;
 		}
 
 		for (var i = 0; i < titleList.length; i++){

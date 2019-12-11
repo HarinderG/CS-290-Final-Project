@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "handlebars ./views/partials/movieCard.handlebars -f public/movieCard.js",
+    "build": "handlebars ./views/partials/movieCard.handlebars -f ./public/movieCard.js",
     "dev": "nodemon server.js",
     "prestart": "npm run build"
   },

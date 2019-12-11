@@ -32,7 +32,7 @@ async function displayMovies (req, res) {
 			.then(data => {
 					for (var i = 0; i < data.Search.length; i++) {
 						console.log("Found " + data.Search[i].Title + " on page " + pageN);
-						if (data.Search[i].Type.indexOf("movie") != -1)
+						if (data.Search[i].Type.indexOf("movie") != -1 && titleList.indexOf(data.Search[i].Title) == -1)
 							titleList.push(data.Search[i].Title);
 					}
 			})

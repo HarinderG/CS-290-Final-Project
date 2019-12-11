@@ -12,33 +12,20 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-// ------------------------------------------------------------------------------------
+app.get("/", displayMovies);
 
-app.get("/", async function (req, res) {
-	await fetch('http://www.omdbapi.com/?s=' + "cars" +'&apikey=' + config.API_KEY)
-		.then(response => {
-			// Get JSON
-			return response.json();
-		})
-		.then(data => {
-			// Work with JSON data here
-			var apiData = data.Search;
-			res.status(200).render('moviePage', {apiData});
-		})
-		.catch(err => {
-			// Do something for an error here
-			console.log("------------------ URL DOES NOT EXIST");
-		})
-});
+app.get("/:s", displayMovies);
 
-var apiResponse = "True";
-
-app.get("/:s", async function (req, res) {
+async function displayMovies (req, res) {
 	var search = req.params.s;
+	var apiResponse = "True";
 	var titleList = [];
 	var apiData = [];
 
-	for (var pageN = 1; pageN <= 3; pageN++) {
+	if (search == undefined)
+		search = "star wars";
+
+	for (var pageN = 1; pageN <= 6; pageN++) {
 		await fetch('http://www.omdbapi.com/?s=' + search + "&page=" + pageN +'&apikey=' + config.API_KEY)
 			.then(response => {
 				return response.json();
@@ -75,7 +62,7 @@ app.get("/:s", async function (req, res) {
 		}
 		console.log(apiData);
 		res.status(200).render('moviePage', {apiData});
-});
+}
 
 app.listen(port, function () {
   console.log("== Server is listening on port", port);

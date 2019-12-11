@@ -32,7 +32,7 @@ header
   height: 215px;
   width: 160px;
   margin-top: 2%;
-  margin-bottom: 4%;
+  margin-bottom: 2.5%;
   margin-left: 2%;
   margin-right: 2%;
 }
@@ -61,9 +61,9 @@ header
 .card-title
 {
   display: block;
-  max-width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 100%;
   color: #ffffff;
 }

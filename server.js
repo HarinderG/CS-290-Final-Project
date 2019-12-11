@@ -18,7 +18,6 @@ app.get("/:s", displayMovies);
 
 async function displayMovies (req, res) {
 	var search = req.params.s;
-	var apiResponse = "True";
 	var titleList = [];
 	var apiData = [];
 
@@ -31,13 +30,11 @@ async function displayMovies (req, res) {
 				return response.json();
 			})
 			.then(data => {
-				apiResponse = data.Response;
-				if (apiResponse == "True"){
 					for (var i = 0; i < data.Search.length; i++) {
 						console.log("Found " + data.Search[i].Title + " on page " + pageN);
-						titleList.push(data.Search[i].Title);
+						if (data.Search[i].Type.indexOf("movie") != -1 && titleList.indexOf(data.Search[i].Title) == -1)
+							titleList.push(data.Search[i].Title);
 					}
-				}
 			})
 			.catch(err => {
 				console.log("------------------ URL DOES NOT EXIST");
@@ -60,7 +57,7 @@ async function displayMovies (req, res) {
 					console.log("------------------ URL DOES NOT EXIST");
 				});
 		}
-		console.log(apiData);
+		// console.log(apiData);
 		res.status(200).render('moviePage', {apiData});
 }
 

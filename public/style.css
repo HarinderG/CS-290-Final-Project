@@ -76,3 +76,7 @@ header
   font-size: 100%;
   color: #4C4B4B;
 }
+
+.error-container {
+  text-align: center;
+}

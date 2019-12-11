@@ -16,6 +16,10 @@ app.get("/", displayMovies);
 
 app.get("/:s", displayMovies);
 
+app.get("*", (req, res) => {
+	res.status(404).render('404');
+});
+
 async function displayMovies (req, res) {
 	var search = req.params.s;
 	var titleList = [];

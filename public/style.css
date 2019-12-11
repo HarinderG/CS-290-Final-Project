@@ -85,3 +85,57 @@ header
 .error-container {
   text-align: center;
 }
+
+#info-container {
+  padding-top: 100px;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  text-align: center;
+}
+
+#info-poster-img {
+  display: block;
+  float: left;
+  max-width: 300px;
+}
+
+#info-detail {
+  max-width: 800px;
+  padding-left: 50px;
+  text-align: left;
+  float: left;
+}
+
+#info-imdb-logo {
+  max-height: 20px;
+  vertical-align: middle;
+}
+
+#info-imdb-rating {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#info-meta-rating {
+  padding: 5px; 
+  background-color: #6c3;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff!important;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  font-size: 17px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+#info-tomato-logo {
+  padding-left: 10px;
+  max-height: 20px;
+  vertical-align: middle;
+}
+
+#info-tomato-rating {
+  padding-left: 2px;
+}

@@ -16,6 +16,20 @@ app.get("/", displayMovies);
 
 app.get("/:s", displayMovies);
 
+app.get("/:s/info", async function (req, res) {
+	var search = req.params.s;
+	await fetch('http://www.omdbapi.com/?t=' + search + '&type=movie&plot=full&apikey=' + config.API_KEY)
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			res.status(200).render('movieInfo', data);
+		})
+		.catch(err => {
+			console.log("------------------ URL DOES NOT EXIST");
+		});
+});
+
 app.get("*", (req, res) => {
 	res.status(404).render('404');
 });

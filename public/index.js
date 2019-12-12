@@ -14,7 +14,7 @@ searchBox.addEventListener('keypress', function search(e) {
 //----------------------------------------------------------------------------------
 
 //variables for event listening
-
+//decade buttons
 var wantedDecade60to69 = document.getElementById('dropdown-decade-1960');
 wantedDecade60to69.addEventListener('click', delDecade60to69);
 var wantedDecade70to79 = document.getElementById('dropdown-decade-1970');
@@ -28,6 +28,7 @@ wantedDecade2000to2009.addEventListener('click', delDecade2000to2009);
 var wantedDecade2010to2019 = document.getElementById('dropdown-decade-2010');
 wantedDecade2010to2019.addEventListener('click', delDecade2010to2019);
 
+//genre buttons
 var wantedGenreAction = document.getElementById('dropdown-genre-action');
 wantedGenreAction.addEventListener('click', getGenreAction);
 var wantedGenreAdventure = document.getElementById('dropdown-genre-adventure');
@@ -51,6 +52,7 @@ wantedGenreRomance.addEventListener('click', getGenreRomance);
 var wantedGenreAnimation = document.getElementById('dropdown-genre-animation');
 wantedGenreAnimation.addEventListener('click', getGenreAnimation);
 
+//rating buttons
 var wantedRatingG = document.getElementById("dropdown-rated-g");
 wantedRatingG.addEventListener('click', getRatingG)
 var wantedRatingPG = document.getElementById('dropdown-rated-pg')
@@ -60,6 +62,152 @@ wantedRatingPG13.addEventListener('click', getRatingPG13)
 var wantedRatingR = document.getElementById('dropdown-rated-r')
 wantedRatingR.addEventListener('click', getRatingR)
 
+//metacritic buttons
+var wantedScore90to100 = document.getElementById("dropdown-metascore-90");
+wantedScore90to100.addEventListener('click', getScore90to100);
+var wantedScore80to89 = document.getElementById("dropdown-metascore-80");
+wantedScore80to89.addEventListener('click', getScore80to89);
+var wantedScore70to79 = document.getElementById("dropdown-metascore-70");
+wantedScore70to79.addEventListener('click', getScore70to79);
+var wantedScore60to69 = document.getElementById("dropdown-metascore-60");
+wantedScore60to69.addEventListener('click', getScore60to69);
+var wantedScore50to59 = document.getElementById("dropdown-metascore-50");
+wantedScore50to59.addEventListener('click', getScore50to59);
+var wantedScore40to49 = document.getElementById("dropdown-metascore-40");
+wantedScore40to49.addEventListener('click', getScore40to49);
+var wantedScore30to39 = document.getElementById("dropdown-metascore-30");
+wantedScore30to39.addEventListener('click', getScore30to39);
+var wantedScore20to29 = document.getElementById("dropdown-metascore-20");
+wantedScore20to29.addEventListener('click', getScore20to29);
+var wantedScore10to19 = document.getElementById("dropdown-metascore-10");
+wantedScore10to19.addEventListener('click', getScore10to19);
+
+
+function getScore10to19(){
+	var specifiedScore = '1'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore20to29(){
+	var specifiedScore = '2'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore30to39(){
+	var specifiedScore = '3'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}	
+
+function getScore40to49(){
+	var specifiedScore = '4'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore50to59(){
+	var specifiedScore = '5'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore60to69(){
+	var specifiedScore = '6'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore70to79(){
+	var specifiedScore = '7'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore80to89(){
+	var specifiedScore = '8'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
+
+function getScore90to100(){
+	var specifiedScore = '9'
+	var allCards = document.querySelectorAll(".card");
+
+	for(i = 0; i < allCards.length; i++){
+		var scoreContentOfAllCardsArray = allCards[i].getAttribute("card-metascore");
+	 	if(scoreContentOfAllCardsArray != specifiedScore+0 && scoreContentOfAllCardsArray != specifiedScore+1 && scoreContentOfAllCardsArray != specifiedScore+2 && scoreContentOfAllCardsArray != specifiedScore+3 && scoreContentOfAllCardsArray != specifiedScore+4 && scoreContentOfAllCardsArray !=specifiedScore+5 && scoreContentOfAllCardsArray != specifiedScore+6 && scoreContentOfAllCardsArray != specifiedScore+7 && scoreContentOfAllCardsArray != specifiedScore+8 && scoreContentOfAllCardsArray != specifiedScore+9 && scoreContentOfAllCardsArray != '100'){
+	 		console.log('removed a score of: ' + scoreContentOfAllCardsArray)
+			allCards[i].parentNode.removeChild(allCards[i]);
+		}
+	}
+
+}
 
 function getRatingR(){
 	var specifiedRating = 'R';

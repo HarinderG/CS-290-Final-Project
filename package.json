@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "handlebars ./views/partials/movieCard.handlebars -f ./public/movieCard.js",
-    "dev": "nodemon server.js",
+    "dev": "nodemon --ignore 'cachedData/*'",
     "prestart": "npm run build"
   },
   "repository": {
@@ -26,6 +26,6 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.2"
   }
 }

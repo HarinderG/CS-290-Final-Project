@@ -1,5 +1,5 @@
 config.js
 .DS_Store
 .Rhistory
-node_modules/*
-cachedData/*
+/node_modules/*
+/cachedData/*

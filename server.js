@@ -98,11 +98,8 @@ async function displayMovies (req, res) {
 				    console.log(search + ' saved to cachedData!');
 				});
 
-				fs.readFile('./cachedData/' + search + '.json', 'utf-8', (err, data) => {
-					if (err) throw err;
-					var apiData2 = JSON.parse(data);
-					res.status(200).render('moviePage', {apiData2});
-				});
+				var apiData2 = apiData;
+				res.status(200).render('moviePage', {apiData2});
 			}
 	}
 }

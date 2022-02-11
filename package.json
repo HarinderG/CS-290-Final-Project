@@ -21,7 +21,7 @@
   "homepage": "https://github.com/HarinderG/CS-290-Final-Project#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
+    "express-handlebars": "^5.3.1",
     "handlebars": "^4.5.3",
     "node-fetch": "^2.6.0"
   },
